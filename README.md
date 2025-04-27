@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# Task Manager App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Mô tả
+**Task Manager App** là một ứng dụng quản lý công việc, được xây dựng bằng **React 19** với sự hỗ trợ của **Vite** để tối ưu hóa tốc độ phát triển và build dự án.  
+Giao diện được thiết kế bằng **TailwindCSS 4.1.4**, kết hợp cùng **clsx** và **tailwind-merge** để tối ưu hóa việc xử lý className một cách đơn giản và linh hoạt.  
+Ứng dụng sử dụng **Zustand** để quản lý trạng thái (state management) hiệu quả và dễ mở rộng.  
+Bên cạnh đó, **TypeScript** giúp đảm bảo độ ổn định, an toàn và dễ maintain cho codebase.  
+Dữ liệu công việc (task) được lưu trữ trên **LocalStorage** để đảm bảo tính liên tục khi tải lại trang.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Hướng dẫn cài đặt
 
-## Expanding the ESLint configuration
+### Yêu cầu môi trường
+- **Node.js** phiên bản `>= 18.x`
+- **npm** phiên bản `>= 9.x` (hoặc sử dụng **yarn** / **pnpm**)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Các bước cài đặt
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone repository:
+   ```bash
+   git clone https://github.com/your-username/task-manager-app.git
+   cd task-manager-app
+2. Cài dặt dependencies:
+   ```bash
+   npm install
+   ```
+3. Chạy lệnh dev:
+   ```bash
+   npm run dev
+   ```
+4. Mở trình duyệt và truy cập vào `http://localhost:5173`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Cấu trúc thư mục
+├── README.md
+├── package.json
+├── src
+│   ├── components
+│   │   ├── hooks
+│   │   │   └── useTaskManagerStore.ts
+│   │   ├── layout
+│   │   ├── ui
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── TaskItem.tsx
+│   │   │   ├── TaskList.tsx
+│   │   │   └── index.ts
+│   │   ├── utils
+│   │   │   └── localStorage.ts
+│   ├── configs
+│   ├── routes
+│   ├── enums
+│   ├── pages
+│   │   ├── TaskManager 
+│   │   │   ├── TaskManager.tsx
+│   │   └── index.ts
+│   ├── services
+│   │   ├── TaskService.ts
+│   ├── stores
+│   │   ├── useTaskManagerStore.ts
+│   ├── types
+│   │   └── task.type.ts
+│   ├── index.tsx
+│   └── main.tsx
+├── App.tsx
+├── main.tsx
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Các chức năng chính của dự án
+- Tạo, xóa, sửa các task
+- Hiển thị danh sách các task
+- Lọc task theo trạng thái (completed, pending)
+- Thay đổi trang thái task
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Giao diện
+### Giao diện desktop
+![Task Manager Screenshot](src/assets/desktop.png)
+### Giao diện tablet
+![Task Manager Screenshot](src/assets/tablet.png)
+### Giao diện mobile
+![Task Manager Screenshot](src/assets/mobile.png)
+
