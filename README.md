@@ -31,38 +31,7 @@ Dữ liệu công việc (task) được lưu trữ trên **LocalStorage** để
 4. Mở trình duyệt và truy cập vào `http://localhost:5173`
 
 ### Cấu trúc thư mục
-├── README.md
-├── package.json
-├── src
-│   ├── components
-│   │   ├── hooks
-│   │   │   └── useTaskManagerStore.ts
-│   │   ├── layout
-│   │   ├── ui
-│   │   │   ├── Button.tsx
-│   │   │   ├── Input.tsx
-│   │   │   ├── TaskItem.tsx
-│   │   │   ├── TaskList.tsx
-│   │   │   └── index.ts
-│   │   ├── utils
-│   │   │   └── localStorage.ts
-│   ├── configs
-│   ├── routes
-│   ├── enums
-│   ├── pages
-│   │   ├── TaskManager 
-│   │   │   ├── TaskManager.tsx
-│   │   └── index.ts
-│   ├── services
-│   │   ├── TaskService.ts
-│   ├── stores
-│   │   ├── useTaskManagerStore.ts
-│   ├── types
-│   │   └── task.type.ts
-│   ├── index.tsx
-│   └── main.tsx
-├── App.tsx
-├── main.tsx
+![Task Manager Screenshot](src/assets/structure.png)
 
 # Các chức năng chính của dự án
 - Tạo, xóa, sửa các task
